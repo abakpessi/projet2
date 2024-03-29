@@ -1,0 +1,13 @@
+<h1>Connexion</h1>
+
+
+{% for message in messages%}
+    <p>{{ message }}</p>
+{%endfor%}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Se connecter</button>
+    <p><a href="{% url 'accounts:register' %}">Pas de compte?</a></p>
+</form>
